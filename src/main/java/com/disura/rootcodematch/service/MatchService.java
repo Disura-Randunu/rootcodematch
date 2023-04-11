@@ -77,7 +77,7 @@ public class MatchService {
                         .wicket_type(kindOfWicket)
                         .dismissed_played(dismissedPlayed).build();
 
-//                saveMatch(match);
+                saveMatch(match);
 
                 teamNames.put(innings, teamName);
                 int inningScore = scores.getOrDefault(innings, 0);
@@ -104,16 +104,16 @@ public class MatchService {
             System.out.println("Winning team: " + winningTeam);
             System.out.println();
             System.out.println("Scores:");
-            System.out.println(teamNames.get(1) + ": " + team1Score + "/" + wickets.get(teamNames.get(1)) + " (" + String.format("%.1f", team1Overs) + " overs)");
-            System.out.println(teamNames.get(2) + ": " + team2Score + "/" + wickets.get(teamNames.get(2)) + " (" + String.format("%.1f", team2Overs) + " overs)");
+            System.out.println(teamNames.get(1) + ": " + team1Score + " (" + String.format("%.1f", team1Overs) + " overs)");
+            System.out.println(teamNames.get(2) + ": " + team2Score + " (" + String.format("%.1f", team2Overs) + " overs)");
             System.out.println();
             System.out.println("Player with most runs: " + getMostRunsPlayer(runs));
             System.out.println("Player with most wickets: " + getMostWicketsPlayer(wickets));
             System.out.println("===========================================");
 
             Map<String, Object> scores_summary = new HashMap<>();
-            scores_summary.put(teamNames.get(1), team1Score + "/" + wickets.get(teamNames.get(1)) + " (" + String.format("%.1f", team1Overs) + " overs)");
-            scores_summary.put(teamNames.get(2), team2Score + "/" + wickets.get(teamNames.get(2)) + " (" + String.format("%.1f", team1Overs) + " overs)");
+            scores_summary.put(teamNames.get(1), team1Score + " (" + String.format("%.1f", team1Overs) + " overs)");
+            scores_summary.put(teamNames.get(2), team2Score + " (" + String.format("%.1f", team2Overs) + " overs)");
             Map<String, Object> summary = new HashMap<>();
 
             summary.put("winning_team", winningTeam);

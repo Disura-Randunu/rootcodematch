@@ -1,10 +1,19 @@
 package com.disura.rootcodematch.controller;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 public class AppResponse {
 
-    private final Boolean status;
-    private final String message;
-    private final Object data;
+    private Boolean status;
+    private String message;
+    private Object data;
 
     public AppResponse(Boolean status, String message, Object data) {
         this.status = status;
