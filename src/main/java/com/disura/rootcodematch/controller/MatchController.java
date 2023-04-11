@@ -19,14 +19,21 @@ public class MatchController {
         this.matchService = matchService;
     }
 
+    @GetMapping("/summary")
+    public ResponseEntity<AppResponse> getMatchSummary(@RequestParam("file") MultipartFile file) throws MatchException {
+        try {
+            return ResponseEntity.ok(new AppResponse(true, "Match data saved. Summary generated", matchService.getMatchSummary(file)));
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return ResponseEntity.badRequest().build();
+    }
+
     @GetMapping("/")
     public ResponseEntity<AppResponse> getAllMatches() throws MatchException {
         return ResponseEntity.ok(new AppResponse(true, "All Match Records", matchService.getAllMatches()));
     }
 
-    @GetMapping("/summary")
-    public ResponseEntity<AppResponse> getMatchSummary(@RequestParam("file") MultipartFile file) throws MatchException {
-        return ResponseEntity.ok(new AppResponse(true, "Match data saved. Summary generated", matchService.getMatchSummary(file)));
-    }
+
 
 }
