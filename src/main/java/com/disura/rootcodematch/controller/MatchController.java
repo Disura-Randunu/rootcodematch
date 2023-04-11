@@ -24,7 +24,7 @@ public class MatchController {
         return ResponseEntity.ok(new AppResponse(true, "Match data saved. Summary generated", matchService.getMatchSummary(file)));
     }
 
-    @GetMapping("/")
+    @GetMapping()
     public ResponseEntity<AppResponse> getAllMatches() throws MatchException {
         return ResponseEntity.ok(new AppResponse(true, "All Match Records", matchService.getAllMatches()));
     }
