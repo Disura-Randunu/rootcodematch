@@ -1,1 +1,2 @@
-SpringBoot REST API for Cricket Match Score Processing
+## SpringBoot REST API for Cricket Match Score Processing
+By Disura Randunu Bandara
