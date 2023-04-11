@@ -23,7 +23,7 @@ public class MatchController {
     public ResponseEntity<AppResponse> getMatchSummary(@RequestParam("file") MultipartFile file) throws MatchException {
         try {
             return ResponseEntity.ok(new AppResponse(true, "Match data saved. Summary generated", matchService.getMatchSummary(file)));
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return ResponseEntity.badRequest().build();
@@ -33,7 +33,6 @@ public class MatchController {
     public ResponseEntity<AppResponse> getAllMatches() throws MatchException {
         return ResponseEntity.ok(new AppResponse(true, "All Match Records", matchService.getAllMatches()));
     }
-
 
 
 }

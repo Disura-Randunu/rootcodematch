@@ -123,7 +123,7 @@ public class MatchService {
 
             return summary;
 
-        } catch (Exception e){
+        } catch (Exception e) {
             throw new MatchException(e);
         }
 
